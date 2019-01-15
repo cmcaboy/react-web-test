@@ -1,26 +1,24 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import "./App.css";
+import AppRouter from "./routers/AppRouter";
+import { store, persistor } from "./store/configureStore";
+import "normalize.css/normalize.css";
+import "./styles/styles.scss";
+import "react-dates/lib/css/_datepicker.css";
 
-class App extends Component {
+interface Props {}
+interface State {}
+
+class App extends Component<Props, State> {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <AppRouter />
+        </PersistGate>
+      </Provider>
     );
   }
 }

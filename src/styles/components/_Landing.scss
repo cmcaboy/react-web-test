@@ -1,0 +1,166 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.top-section {
+  background-image: url("../images/gpc_hero_image@2x.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding-top: 230px;
+  padding-left: 486px;
+  padding-right: 486px;
+  padding-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.login-button {
+  text-decoration: "none";
+  position: absolute;
+  color: #ffffff;
+  top: 32px;
+  right: 80px;
+  margin: 0;
+}
+
+.primary-logo {
+  height: auto;
+  width: 350px;
+}
+
+.secondary-logo {
+  padding-top: 32px;
+  padding-bottom: 230px;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.who-we-are-desc {
+  display: flex;
+  flex-direction: column;
+  margin-left: 160px;
+  max-width: 550px;
+}
+
+.who-we-are-title,
+.subscribe-title {
+  color: $button-blue;
+  white-space: nowrap;
+  width: 375px;
+  text-align: right;
+}
+
+.who-we-are {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  height: auto;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.our-apps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #2f2e2e;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.our-apps-title {
+  margin-top: 80px;
+  margin-bottom: 64px;
+  color: #ffffff;
+}
+
+.our-apps-apps {
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.our-apps-apps-item {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  color: #ffffff;
+  margin-right: 40.5px;
+  margin-left: 40.5px;
+}
+
+.our-apps-apps-item-img {
+  height: auto;
+  width: 200px;
+}
+
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 88px;
+  margin-bottom: 90px;
+}
+
+.subscribe-email {
+  height: 49px;
+  width: auto;
+}
+
+.subscribe-title {
+  margin-bottom: 45px;
+}
+
+.subscribe-input {
+  height: 100%;
+  width: 276px;
+  text-indent: 20px;
+  font-size: 14px;
+  color: #1b1e1f;
+  font-weight: 500;
+}
+
+.subscribe-button {
+  width: 165px;
+  height: 100%;
+  background-color: $button-blue;
+  border-radius: 0;
+  color: #ffffff;
+}
+
+.footer {
+  height: auto;
+  width: 100%;
+  background-color: $footer-grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-item {
+  margin-left: 696px;
+  margin-right: 696px;
+  margin-bottom: 29px;
+  margin-top: 29px;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}

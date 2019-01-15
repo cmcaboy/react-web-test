@@ -1,0 +1,25 @@
+.page-header {
+  background: #f7f7f7;
+  padding: $l-size 0;
+  margin-bottom: $l-size;
+}
+.summary-container {
+  margin: 0 auto;
+  padding: 0 $m-size;
+  max-width: 80rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: $desktop-breakpoint) {
+    flex-direction: column;
+  }
+}
+
+.page-header__title {
+  font-weight: 300;
+  margin: 0;
+  span {
+    font-weight: 700;
+  }
+}

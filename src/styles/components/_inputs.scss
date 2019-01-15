@@ -1,0 +1,59 @@
+.text-input {
+  border: 1px solid #cacccd;
+  height: 50px;
+  padding: $s-size;
+  // font-size: $font-size-large;
+  // font-weight: 300;
+}
+
+.select {
+  @extend .text-input;
+}
+
+.text-area {
+  @extend .text-input;
+  height: 10rem;
+}
+
+.authinput {
+  border-radius: 0;
+  height: 52px;
+  width: 360px;
+  margin-bottom: 12px;
+  text-indent: 36px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-width: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.authinput-input {
+  border-radius: 0;
+  height: 52px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: transparent;
+  border-width: 0;
+}
+
+.authinput-input::placeholder {
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 18px;
+  opacity: 0.65 !important;
+}
+
+.authinput-img {
+  margin-left: 20px;
+  margin-right: 10px;
+  // icon images are too big. Need to scale down
+  height: auto;
+  width: 25px;
+}
