@@ -1,8 +1,11 @@
 import React, { ChangeEvent } from "react";
 import { Link } from "react-router-dom";
-import { AppLink } from "./Common/AppLink";
-import { WHO_WE_ARE_DESC_1, WHO_WE_ARE_DESC_2 } from "../utils/variables";
-import emailValidation from "../utils/emailValidation";
+import { AppLink } from "../Common/AppLink";
+import { WHO_WE_ARE_DESC_1, WHO_WE_ARE_DESC_2 } from "../../utils/variables";
+import emailValidation from "../../utils/emailValidation";
+
+// This component exclusively covers the Landing Page
+// All styles found in _Landing.scss
 
 interface Props {}
 

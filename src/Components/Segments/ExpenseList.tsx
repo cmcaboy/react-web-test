@@ -1,7 +1,7 @@
 import React, { SFC } from "react";
 import { connect } from "react-redux";
 import ExpenseListItem from "./ExpenseListItem";
-import selectExpenses from "../selectors/expenses";
+import selectExpenses from "../../selectors/expenses";
 
 interface Props {
   expenses: any[];
@@ -11,12 +11,14 @@ export const ExpenseList: SFC<Props> = ({ expenses }) => (
   <div className="content-container">
     <div>
       <div className="list-header">
+        {/* Used for mobile responsiveness */}
         <div className="show-for-mobile">Expenses</div>
         <div className="show-for-desktop">Expenses</div>
         <div className="show-for-desktop">Amount</div>
       </div>
     </div>
     <div className="list-body">
+      {/* If the expenses array is empty, render a No expenses message */}
       {expenses.length === 0 ? (
         <div className="list-item list-item--message">
           <span>No expenses</span>

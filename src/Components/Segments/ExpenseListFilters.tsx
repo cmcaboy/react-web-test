@@ -8,8 +8,12 @@ import {
   sortByAmount,
   setStartDate,
   setEndDate
-} from "../actions/filter";
+} from "../../actions/filter";
 import { Moment } from "moment";
+
+// This component handles the filters and sort options with the expenses
+// all filter and sort options reside in the filter reducer
+// the functions are very declarative. You can see each in the Props interface
 
 interface Props {
   setTextFilter: (text: string) => void;
@@ -33,6 +37,7 @@ export class ExpenseListFilters extends React.Component<Props, State> {
     };
   }
 
+  // update date filters
   onDatesChange = ({
     startDate,
     endDate
@@ -44,14 +49,18 @@ export class ExpenseListFilters extends React.Component<Props, State> {
     this.props.setEndDate(endDate);
   };
 
+  // open or close date picker
   onFocusChange = (calendarFocused: FocusedInputShape | null) => {
     this.setState(() => ({ calendarFocused }));
   };
 
+  // handle text change for text filter
   onTextChange = (e: ChangeEvent<HTMLInputElement>) => {
     this.props.setTextFilter(e.target.value);
   };
 
+  // sort by date or amount
+  // date is default
   onSortChange = (e: ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value === "date") {
       this.props.sortByDate();

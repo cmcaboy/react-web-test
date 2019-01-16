@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import ExpenseForm from "./ExpenseForm";
-import { startAddExpense } from "../actions/expense";
+import ExpenseForm from "../Common/ExpenseForm";
+import { startAddExpense } from "../../actions/expense";
 
 interface Props {
   startAddExpense: (expense: any) => void;
@@ -12,6 +12,8 @@ interface State {}
 
 class AddExpensePage extends React.Component<Props, State> {
   onSubmit = (expense: any) => {
+    // Add expense to redux store
+    // Redirect to main expense page
     this.props.startAddExpense(expense);
     this.props.history.push("/main");
   };

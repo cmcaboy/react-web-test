@@ -12,6 +12,7 @@ export const login = (email: string, password: string) => ({
 export const startLogin = (email: string, password: string) => {
   return async (dispatch: any) => {
     let data;
+    // Attempt post request
     try {
       const rawData = await fetch(
         `http://dev.datechnologies.co/Tests/scripts/user-login.php`,
@@ -25,7 +26,8 @@ export const startLogin = (email: string, password: string) => {
       );
       data = await rawData.json();
     } catch (e) {
-      // Could set an error here
+      // catch http error
+      // generate error if thats the case
       console.log("Error logging in: ", e);
       dispatch(startError(e));
       return null;
@@ -71,6 +73,7 @@ export const startSignup = (
 ) => {
   return async (dispatch: any) => {
     let data;
+    // attempt http post request
     try {
       const rawData = await fetch(
         `http://dev.datechnologies.co/Tests/scripts/user-signup.php`,
@@ -84,7 +87,6 @@ export const startSignup = (
       );
       data = await rawData.json();
     } catch (e) {
-      // Could set an error here
       console.log("Error logging in: ", e);
       return null;
     }
@@ -94,7 +96,7 @@ export const startSignup = (
       return dispatch(startError(data.message));
     }
 
-    // dispatch user load
+    // Load user data into redux store
     await dispatch(loadUser(data));
 
     return dispatch(login(email, password));

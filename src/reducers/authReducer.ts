@@ -1,6 +1,7 @@
 // Auth Reducer
 // ------------
 // Allows user to login or logout
+// Also handle errors in this reducer
 
 const defaultAuthReducerState = {
   id: null,

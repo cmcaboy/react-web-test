@@ -1,18 +1,19 @@
 .header {
-  background: $dark-blue;
+  background: $footer-grey;
 }
 
 .header-container {
-  background-color: $footer-grey;
+  margin: 0 auto;
+  padding: 0 $m-size;
+  max-width: 80rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 0;
-  padding: 0 $m-size;
-  // max-width: 80rem;
+  @media (max-width: $desktop-breakpoint) {
+    flex-direction: column;
+  }
 }
-
 .header-right {
   display: flex;
   flex-direction: row;

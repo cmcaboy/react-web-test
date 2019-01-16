@@ -1,7 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
-//import Header from '../components/Header';
+
+// Public Route
+// See AppRouter for more information
 
 interface Props {
   isAuthenticated: boolean;
@@ -28,8 +30,6 @@ export const PublicRoute = ({
 };
 
 const mapStateToProps = (state: any) => {
-  console.log("state: ", state);
-
   return {
     isAuthenticated: !!state.user.user_token
   };

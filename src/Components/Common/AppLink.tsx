@@ -1,6 +1,14 @@
-import React from "react";
+import React, { SFC } from "react";
 
-const AppLink = ({
+// App Icons on Landing page
+
+interface Props {
+  img: string;
+  label: string;
+  url: string;
+}
+
+const AppLink: SFC<Props> = ({
   img,
   label,
   url

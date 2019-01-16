@@ -1,7 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
-import Header from "../Components/Header";
+import Header from "../Components/Common/Header";
+
+// PrivateRoute
+// See AppRouter for more information
 
 interface Props {
   isAuthenticated: boolean;
@@ -30,6 +33,7 @@ export const PrivateRoute = ({
   />
 );
 
+// isAuthenticated is true if user_token exists in redux
 const mapStateToProps = (state: any) => ({
   isAuthenticated: !!state.user.user_token
 });

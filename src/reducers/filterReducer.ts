@@ -2,6 +2,11 @@ import moment from "moment";
 import { createTransform } from "redux-persist";
 
 // Filters Reducer
+// ---------------
+// The filter reducer handles the following options
+// search by text
+// sort by amount or date
+// filter by date
 
 const filtersReducerDefaultState = {
   text: "",

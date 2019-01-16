@@ -8,7 +8,7 @@ interface Props {
   secureTextEntry?: boolean;
 }
 
-const Input: SFC<Props> = ({
+const AuthInput: SFC<Props> = ({
   label,
   value,
   onChange,
@@ -30,4 +30,4 @@ const Input: SFC<Props> = ({
   );
 };
 
-export { Input };
+export { AuthInput };

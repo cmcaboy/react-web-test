@@ -1,8 +1,11 @@
 import React, { ChangeEvent } from "react";
 import { connect } from "react-redux";
-import { Input } from "./Common/Input";
-import emailValidation from "../utils/emailValidation";
-import { startSignup, startError } from "../actions/auth";
+import { AuthInput } from "../Common/AuthInput";
+import emailValidation from "../../utils/emailValidation";
+import { startSignup, startError } from "../../actions/auth";
+
+// Very similar to Login
+// Error handling is handled through Redux auth reducer
 
 interface Props {
   signup: any;
@@ -67,19 +70,19 @@ class Signup extends React.Component<Props, State> {
     const { error } = this.props;
     return (
       <form onSubmit={this.onSubmit} className="auth-form-input">
-        <Input
+        <AuthInput
           label="Username"
           value={username}
           onChange={this.onChangeUsername}
           icon="images/ic_username@2x.png"
         />
-        <Input
+        <AuthInput
           label="Email"
           value={email}
           onChange={this.onChangeEmail}
           icon="images/ic_email@2x.png"
         />
-        <Input
+        <AuthInput
           label="Password"
           value={password}
           onChange={this.onChangePassword}

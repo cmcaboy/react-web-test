@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import ExpenseForm from "./ExpenseForm";
-import { startEditExpense, startRemoveExpense } from "../actions/expense";
+import ExpenseForm from "../Common/ExpenseForm";
+import { startEditExpense, startRemoveExpense } from "../../actions/expense";
 
 interface Props {
   editExpense: (id: string, expense: any) => void;
@@ -18,7 +18,9 @@ class EditExpensePage extends React.Component<Props, State> {
       history: { push },
       expense: { id }
     } = this.props;
+    // Add altered expense to redux store
     this.props.editExpense(id, expense);
+    // navigate back to main expense page
     push("/main");
   };
 
@@ -27,6 +29,7 @@ class EditExpensePage extends React.Component<Props, State> {
       expense: { id },
       history: { push }
     } = this.props;
+    // remove expense from reduxe store
     this.props.removeExpense(id);
     push("/main");
   };

@@ -27,33 +27,46 @@ class ExpenseForm extends React.Component<Props, State> {
       amount: props.expense ? (props.expense.amount / 100).toString() : "",
       createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
       calendarFocused: false,
-      dummyId: uuid(),
+      dummyId: uuid(), // used to satisfy SingleDatePicker requirement
       error: ""
     };
   }
+
+  // handles description input field changes
   onDescriptionChange = (e: ChangeEvent<HTMLInputElement>) => {
     const description = e.target.value;
     this.setState({ description });
   };
+
+  // handles note input field changes
   onNoteChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const note = e.target.value;
     this.setState({ note });
   };
+
+  // handles amount input field changes
   onAmountChange = (e: ChangeEvent<HTMLInputElement>) => {
     const amount = e.target.value;
 
+    // regex is used here to support only dollar amounts
     if (!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
       this.setState({ amount });
     }
   };
+
+  // handle date changes
   onDateChange = (createdAt: Moment | null | undefined) => {
     if (createdAt) {
       this.setState({ createdAt });
     }
   };
+
+  // used to handle focus changes on the date picker
   onFocusChange = ({ focused }: { focused: boolean | null }) => {
     this.setState({ calendarFocused: !!focused });
   };
+
+  // used on form submission
   onSubmit = (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -66,6 +79,7 @@ class ExpenseForm extends React.Component<Props, State> {
       });
     } else {
       this.setState({ error: "" });
+      // submit the form to the expense action reducer (logic in parent component)
       onSubmit({
         description: this.state.description,
         amount: parseFloat(this.state.amount) * 100,
@@ -75,6 +89,7 @@ class ExpenseForm extends React.Component<Props, State> {
     }
   };
 
+  // used for SingleDatePicker prop
   funcFalse = () => false;
 
   render() {

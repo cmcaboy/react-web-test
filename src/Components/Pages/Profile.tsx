@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import formatDate from "../utils/formatDate";
+import formatDate from "../../utils/formatDate";
+
+// Simple component that allows a user to view their profile information
 
 interface Props {
   email: string;
@@ -19,7 +21,7 @@ class Profile extends React.Component<Props, State> {
         <img src={profilePicture} />
         <h3>{username}</h3>
         <p>contact: {email}</p>
-        <p>joined on {createdDate}</p>
+        <p>You joined Expense Champion on {createdDate}</p>
       </div>
     );
   }

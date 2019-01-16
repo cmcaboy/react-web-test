@@ -11,6 +11,15 @@ import "react-dates/lib/css/_datepicker.css";
 interface Props {}
 interface State {}
 
+// Provider Component
+// -----------------
+// Used for Redux for state management
+
+// PersitGate Component
+// ---------------------
+// Used for Redux-persist for persisting data between browser reloads
+// See store/configureStore for more info
+
 class App extends Component<Props, State> {
   render() {
     return (

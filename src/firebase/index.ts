@@ -1,5 +1,8 @@
 import firebase from "firebase";
 
+// Initiate firebase for backend persistence
+// All firebase commands are ran in the expenses action generator (actions/expense.ts)
+
 const config = {
   apiKey: "AIzaSyDxWNWE9rRrXEK_QeZJy-duhfbW-xiC9WU",
   authDomain: "expense-champion.firebaseapp.com",

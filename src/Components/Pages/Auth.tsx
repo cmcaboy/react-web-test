@@ -1,11 +1,14 @@
 import React, { ChangeEvent } from "react";
-import Login from "./Login";
-import Signup from "./Signup";
+import Login from "../Segments/Login";
+import Signup from "../Segments/Signup";
 
 interface Props {}
 interface State {
   showSignup: boolean;
 }
+
+// This component renders the Login or Signup logic
+// depending on which icon is selected.
 
 export default class Auth extends React.Component<Props, State> {
   constructor(props: Props) {
@@ -41,6 +44,7 @@ export default class Auth extends React.Component<Props, State> {
               Login
             </h3>
           </div>
+          {/* Render Login or Signup based on showSignup state */}
           {showSignup ? <Signup /> : <Login />}
         </div>
       </div>

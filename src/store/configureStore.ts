@@ -13,6 +13,13 @@ import storage from "redux-persist/lib/storage";
 import moment from "moment";
 import userReducer from "../reducers/user";
 
+// Redux Store
+// -----------
+// This file is dense main because of the use of Redux-persist
+// Redux-persist saves the redux-store to disk, which allows
+// the data to persist between browser reloads.
+// Firebase is used to persist data between login/logout sessions.
+
 const persistConfig = {
   key: "expense-app",
   storage,
@@ -42,6 +49,7 @@ const persistConfig = {
   ]
 };
 
+// Combine reduces
 const reducers = persistCombineReducers(persistConfig, {
   expenses: expenseReducer,
   auth: authReducer,
@@ -49,7 +57,9 @@ const reducers = persistCombineReducers(persistConfig, {
   user: userReducer
 });
 
+// create redux store
 const store = createStore(reducers, applyMiddleware(thunk));
+// Create redux-persist instance
 const persistor = persistStore(store);
 
 // Only used during testing

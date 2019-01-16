@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import moment, { Moment } from "moment";
 import numeral from "numeral";
 
+// This component represents an individual Expense Item
+// Click on the item will route the user to the edit expense
+// page
 interface Props {
   id: string;
   description: string;
